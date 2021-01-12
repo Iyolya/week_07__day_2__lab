@@ -11,9 +11,26 @@
 <body>
 
     <div id="app">
+        <h1>Country Selector</h1>
 
-        
+        <section id="select-single-countries">
+            <select name="countries" id="countries" v-on:click="filteredCountriesByFlag">
+                <option disabled selected>Pick a Country!</option>
+                <option v-for="country in countries" :value="country.alpha3Code">{{ country.name }}</option>
+                <option v-for="flag in country" :value="country.flag">{{ country.flag.value }}</option>
+            </select>
+
+            <!-- <button v-on:click="filteredCountriesByFlag">Show me the FLAG!!!</button> -->
+            <img id="flag-img" v-if="" src="" alt="">
+        </section>
+
+        <section id="total-population">
+            <h2>Total Population of All: {{ totalPopulation }} people</h2>
+        </section>
+
+        <section id="favourite-countries"></section>
+
     </div>
     
 </body>
-</html>
+</html> 
